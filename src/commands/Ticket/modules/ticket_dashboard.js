@@ -83,7 +83,7 @@ function buildPanelEmbed(config) {
     return new EmbedBuilder()
         .setTitle('Infinity')
         .setDescription(config.ticketPanelMessage || 'Click the button below to create a support ticket.')
-        .setColor(getColor('Primery'));
+        .setColor(getColor('primery'));
 }
 
 function buildPanelButtonRow(config) {
