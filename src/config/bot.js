@@ -11,7 +11,7 @@ export const botConfig = {
   // - "invisible" = appears offline
   presence: {
     // Current online state shown on Discord.
-    status: "online",
+    status: "dnd",
 
     // Activity lines shown under the bot name.
     // `type` number mapping from Discord:
@@ -97,7 +97,7 @@ export const botConfig = {
       secondary: "#32CD32",
 
       // Standard status colors for success/error/warning/info messages.
-      success: "#57F287",
+      success: "#32CD32",
       error: "#ED4245",
       warning: "#FEE75C",
       info: "#3498DB",
