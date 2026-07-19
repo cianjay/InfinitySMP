@@ -119,7 +119,7 @@ export function createEmbed({
   author = null,
   footer = null,
   thumbnail = null,
-  image = https://github.com/cianjay/Logo/blob/538ea69ac9d9e9e460ba9cf2b1dc0f8031dc86e8/minecraft_title.png,
+  image = null,
   timestamp = false,
   url = null
 } = {}) {
