@@ -25,7 +25,7 @@ export const botConfig = {
       {
         name: "Minecraft", // required by Discord API, not shown in the client
         state: "Developing",     // this is what people actually see
-        type: 0,               // Custom
+        type: 1,               // Custom
       },
     ],
   },
