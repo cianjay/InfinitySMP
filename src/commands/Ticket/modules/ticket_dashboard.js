@@ -469,7 +469,7 @@ async function handleStaffRole(selectInteraction, rootInteraction, guildConfig, 
                 .setDescription(
                     `**Current:** ${guildConfig.ticketStaffRoleId ? `<@&${guildConfig.ticketStaffRoleId}>` : '`Not set`'}\n\nSelect the role that should have staff access to manage tickets.`,
                 )
-                .setColor(getColor('info')),
+                .setColor(getColor('primary')),
         ],
         components: [row],
         flags: MessageFlags.Ephemeral,
@@ -719,7 +719,7 @@ async function handleLogsChannel(selectInteraction, rootInteraction, guildConfig
             new EmbedBuilder()
                 .setTitle('🎫 Select Ticket Logs Channel')
                 .setDescription('Choose where ticket feedback, lifecycle events (open, close, claim, etc.), and other logs will be sent.')
-                .setColor(getColor('info')),
+                .setColor(getColor('primery')),
         ],
         components: [new ActionRowBuilder().addComponents(channelSelect)],
         flags: MessageFlags.Ephemeral,
