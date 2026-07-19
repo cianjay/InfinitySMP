@@ -121,7 +121,7 @@ export const botConfig = {
         ended: "#ED4245",
       },
       ticket: {
-        open: "#57F287",
+        open: "#32CD32",
         claimed: "#FAA61A",
         closed: "#ED4245",
         pending: "#99AAB5",
@@ -223,7 +223,7 @@ export const botConfig = {
     priorities: {
       none: {
         emoji: "⚪",
-        color: "",
+        color: "#57F287",
         label: "None",
       },
       low: {
