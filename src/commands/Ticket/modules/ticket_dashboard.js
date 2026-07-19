@@ -83,7 +83,7 @@ function buildPanelEmbed(config) {
     return new EmbedBuilder()
         .setTitle('Support Tickets')
         .setDescription(config.ticketPanelMessage || 'Click the button below to create a support ticket.')
-        .setColor(getColor('info'));
+        .setColor(getColor('#32CD32'));
 }
 
 function buildPanelButtonRow(config) {
