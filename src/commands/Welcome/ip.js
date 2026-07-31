@@ -3,21 +3,22 @@ import { SlashCommandBuilder, EmbedBuilder } from 'discord.js';
 export default {
     data: new SlashCommandBuilder()
         .setName('ip')
-        .setDescription('Shows the Minecraft server IP.'),
+        .setDescription('Displays the InfinitySMP server information.'),
 
     async execute(interaction) {
         const embed = new EmbedBuilder()
-            .setColor('#3BA55D')
-            .setTitle('🌍 InfinitySMP | Server Information')
-            .setDescription('Join **InfinitySMP** and start your adventure!')
+            .setColor('#57F287')
+            .setTitle('🌍 InfinitySMP')
+            .setDescription('**Everything you need to join InfinitySMP!**')
             .addFields(
                 {
                     name: '📡 Server IP',
                     value: '```Coming Soon```',
+                    inline: false,
                 },
                 {
                     name: '🔌 Port',
-                    value: '```25565```',
+                    value: '```19132 (Bedrock)```',
                     inline: true,
                 },
                 {
@@ -27,25 +28,27 @@ export default {
                 },
                 {
                     name: '🖥️ Platform',
-                    value: '```Java Edition```',
+                    value: '```Java & Bedrock```',
                     inline: true,
                 },
                 {
-                    name: '📢 Status',
+                    name: '📢 Server Status',
                     value: '```🟡 Coming Soon```',
+                    inline: false,
                 },
                 {
                     name: '💬 Discord',
-                    value: 'https://discord.gg/Yq4cpazWpe',
+                    value: 'https://discord.gg/YOURINVITE',
+                    inline: false,
                 }
             )
             .setFooter({
-                text: 'InfinitySMP',
+                text: 'InfinitySMP • See you in-game!',
             })
             .setTimestamp();
 
         await interaction.reply({
-            embeds: [embed]
+            embeds: [embed],
         });
     },
 };
