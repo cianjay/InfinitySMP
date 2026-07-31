@@ -1,11 +1,11 @@
-const { EmbedBuilder } = require('discord.js');
+import { SlashCommandBuilder, EmbedBuilder } from 'discord.js';
 
-module.exports = {
-    name: 'ip',
-    description: 'Displays the Minecraft server information.',
+export default {
+    data: new SlashCommandBuilder()
+        .setName('ip')
+        .setDescription('Shows the Minecraft server information.'),
 
-    async execute(message) {
-
+    async execute(interaction) {
         const embed = new EmbedBuilder()
             .setColor('#3BA55D')
             .setTitle('🌍 InfinitySMP | Server Information')
@@ -53,11 +53,14 @@ module.exports = {
                     inline: false,
                 }
             )
+            .setThumbnail('https://mc-heads.net/avatar/Steve')
             .setFooter({
                 text: 'InfinitySMP',
             })
             .setTimestamp();
 
-        await message.reply({ embeds: [embed] });
+        await interaction.reply({
+            embeds: [embed],
+        });
     },
 };
