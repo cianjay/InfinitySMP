@@ -36,7 +36,7 @@ export default {
                 },
                 {
                     name: '💬 Discord',
-                    value: 'https://discord.gg/YOURINVITE',
+                    value: 'https://discord.gg/Yq4cpazWpe',
                 }
             )
             .setFooter({
