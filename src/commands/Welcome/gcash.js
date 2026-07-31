@@ -1,10 +1,11 @@
-const { EmbedBuilder } = require('discord.js');
+import { SlashCommandBuilder, EmbedBuilder } from 'discord.js';
 
-module.exports = {
-    name: 'gcash',
-    description: 'Shows the GCash payment information.',
+export default {
+    data: new SlashCommandBuilder()
+        .setName('gcash')
+        .setDescription('Shows the GCash payment information.'),
 
-    async execute(message) {
+    async execute(interaction) {
         const embed = new EmbedBuilder()
             .setColor('#0066FF')
             .setTitle('💙 GCash Payment')
@@ -12,27 +13,22 @@ module.exports = {
                 {
                     name: '📱 GCash Number',
                     value: '09XX XXX XXXX',
-                    inline: false,
                 },
                 {
                     name: '👤 Account Name',
                     value: 'Your Name',
-                    inline: false,
                 },
                 {
                     name: '📝 Note',
-                    value: 'Please include your Minecraft username after sending your payment.',
-                    inline: false,
+                    value: 'Include your Minecraft username after sending the payment.',
                 }
             )
-            .setFooter({
-                text: 'InfinitySMP Store',
-            })
+            .setFooter({ text: 'InfinitySMP Store' })
             .setTimestamp();
 
-        await message.reply({ embeds: [embed] });
-
-        // Delete the user's command message
-        message.delete().catch(() => {});
+        await interaction.reply({
+            embeds: [embed],
+            ephemeral: true
+        });
     },
 };
