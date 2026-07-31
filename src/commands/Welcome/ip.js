@@ -53,7 +53,6 @@ module.exports = {
                     inline: false,
                 }
             )
-            .setThumbnail('https://mc-heads.net/avatar/Steve')
             .setFooter({
                 text: 'InfinitySMP',
             })
