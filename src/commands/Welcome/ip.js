@@ -2,37 +2,63 @@ const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: 'ip',
-    description: 'Shows the Minecraft server IP.',
-    execute(message) {
+    description: 'Displays the Minecraft server information.',
+
+    async execute(message) {
 
         const embed = new EmbedBuilder()
-            .setColor('#2ECC71')
+            .setColor('#3BA55D')
             .setTitle('🌍 InfinitySMP | Server Information')
+            .setDescription('Join **InfinitySMP** and start your adventure!')
             .addFields(
                 {
                     name: '📡 Server IP',
                     value: '```Coming Soon```',
+                    inline: false,
                 },
                 {
-                    name: '🎮 Server Version',
+                    name: '🔌 Port',
+                    value: '```25565```',
+                    inline: true,
+                },
+                {
+                    name: '🎮 Version',
                     value: '```1.21.11```',
                     inline: true,
                 },
                 {
-                    name: '📢 Status',
-                    value: '```Coming Soon```',
+                    name: '🖥️ Platform',
+                    value: '```Java Edition```',
                     inline: true,
                 },
                 {
-                    name: '💬 Information',
-                    value: 'The official server IP will be announced soon. Stay tuned!',
+                    name: '📢 Status',
+                    value: '```🟡 Coming Soon```',
+                    inline: false,
+                },
+                {
+                    name: '✨ Features',
+                    value:
+                        '• Survival\n' +
+                        '• Economy\n' +
+                        '• Crates\n' +
+                        '• PvP\n' +
+                        '• Player Shops\n' +
+                        '• Events',
+                    inline: false,
+                },
+                {
+                    name: '💬 Discord',
+                    value: 'https://discord.gg/YOURINVITE',
+                    inline: false,
                 }
             )
+            .setThumbnail('https://mc-heads.net/avatar/Steve')
             .setFooter({
                 text: 'InfinitySMP',
             })
             .setTimestamp();
 
-        message.channel.send({ embeds: [embed] });
+        await message.reply({ embeds: [embed] });
     },
 };
