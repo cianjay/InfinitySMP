@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, EmbedBuilder, AttachmentBuilder } from 'discord.js';
+import { SlashCommandBuilder, EmbedBuilder } from 'discord.js';
 
 export default {
     data: new SlashCommandBuilder()
@@ -6,8 +6,6 @@ export default {
         .setDescription('Shows the Minecraft server information.'),
 
     async execute(interaction) {
-        const logo = new AttachmentBuilder('./assets/infinitysmp.png');
-
         const embed = new EmbedBuilder()
             .setColor('#3BA55D')
             .setTitle('🌍 InfinitySMP | Server Information')
@@ -44,13 +42,13 @@ export default {
                     inline: false,
                 }
             )
-            .setThumbnail('attachment://infinitysmp.png')
-            .setFooter({ text: 'InfinitySMP' })
+            .setFooter({
+                text: 'InfinitySMP',
+            })
             .setTimestamp();
 
         await interaction.reply({
             embeds: [embed],
-            files: [logo],
         });
     },
 };
