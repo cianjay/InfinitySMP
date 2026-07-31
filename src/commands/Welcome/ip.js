@@ -18,7 +18,7 @@ export default {
                 },
                 {
                     name: '🔌 Port',
-                    value: '```19132 (Bedrock)```',
+                    value: '```Coming Soon```',
                     inline: true,
                 },
                 {
