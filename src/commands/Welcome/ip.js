@@ -53,7 +53,7 @@ export default {
                     inline: false,
                 }
             )
-            .setThumbnail('https://raw.githubusercontent.com/cianjay/Thumpnail/d2daef27eab66a55475f089599c8fcecefa7bbec/ChatGPT%20Image%20Jul%2031%2C%202026%2C%2001_29_49%20PM-Photoroom.png')
+            .setThumbnail('https://raw.githubusercontent.com/cianjay/Thumpnail/main/ChatGPT%20Image%20Jul%2031%2C%202026%2C%2001_29_49%20PM-Photoroom.png')
             .setFooter({
                 text: 'InfinitySMP',
             })
