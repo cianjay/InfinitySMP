@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, EmbedBuilder } from 'discord.js';
+import { SlashCommandBuilder, EmbedBuilder, AttachmentBuilder } from 'discord.js';
 
 export default {
     data: new SlashCommandBuilder()
@@ -6,6 +6,8 @@ export default {
         .setDescription('Shows the Minecraft server information.'),
 
     async execute(interaction) {
+        const logo = new AttachmentBuilder('./assets/infinitysmp.png');
+
         const embed = new EmbedBuilder()
             .setColor('#3BA55D')
             .setTitle('🌍 InfinitySMP | Server Information')
@@ -37,30 +39,18 @@ export default {
                     inline: false,
                 },
                 {
-                    name: '✨ Features',
-                    value:
-                        '• Survival\n' +
-                        '• Economy\n' +
-                        '• Crates\n' +
-                        '• PvP\n' +
-                        '• Player Shops\n' +
-                        '• Events',
-                    inline: false,
-                },
-                {
                     name: '💬 Discord',
                     value: 'https://discord.gg/YOURINVITE',
                     inline: false,
                 }
             )
-            .setThumbnail('https://raw.githubusercontent.com/cianjay/Thumpnail/main/ChatGPT%20Image%20Jul%2031%2C%202026%2C%2001_29_49%20PM-Photoroom.png')
-            .setFooter({
-                text: 'InfinitySMP',
-            })
+            .setThumbnail('attachment://infinitysmp.png')
+            .setFooter({ text: 'InfinitySMP' })
             .setTimestamp();
 
         await interaction.reply({
             embeds: [embed],
+            files: [logo],
         });
     },
 };
