@@ -27,8 +27,7 @@ export default {
                 },
                 {
                     name: '🖥️ Platform',
-                    value: '```Java Edition```',
-                    value: '```Bedrock Edition```',
+                    value: '```Java & Bedrock```',
                     inline: true,
                 },
                 {
