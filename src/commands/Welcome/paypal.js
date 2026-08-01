@@ -5,10 +5,9 @@ const ROLE_ID = '1528282130080071690';
 export default {
     data: new SlashCommandBuilder()
         .setName('paypal')
-        .setDescription('Shows the PayPal payment information.'),
+        .setDescription('Display the PayPal payment information.'),
 
     async execute(interaction) {
-        // Check if the user has the required role
         if (!interaction.member.roles.cache.has(ROLE_ID)) {
             return interaction.reply({
                 content: '❌ You do not have permission to use this command.',
@@ -19,7 +18,11 @@ export default {
         const embed = new EmbedBuilder()
             .setColor('#0070BA')
             .setTitle('💙 PayPal Payment')
-            .setDescription('Thank you for supporting InfinitySMP!')
+            .setDescription(
+                'Thank you for supporting **InfinitySMP**!\n\n' +
+                'Please send your payment using the information below.'
+            )
+            .setThumbnail(interaction.guild.iconURL({ dynamic: true }))
             .addFields(
                 {
                     name: '💳 PayPal Email',
@@ -27,8 +30,13 @@ export default {
                     inline: false,
                 },
                 {
-                    name: '📝 Note',
-                    value: 'Include your Minecraft username in the payment note. **(Make sure to send a screenshot of your payment as proof.)**',
+                    name: '📝 Payment Note',
+                    value: 'Include your **Minecraft username** in the payment note.',
+                    inline: false,
+                },
+                {
+                    name: '📸 Proof of Payment',
+                    value: 'After sending your payment, create a ticket and send a **screenshot** of the transaction.',
                     inline: false,
                 }
             )
@@ -38,7 +46,7 @@ export default {
             })
             .setTimestamp();
 
-        await interaction.reply({
+        return interaction.reply({
             embeds: [embed],
             ephemeral: true,
         });
