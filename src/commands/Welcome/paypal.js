@@ -1,14 +1,15 @@
 import { SlashCommandBuilder, EmbedBuilder } from 'discord.js';
 
-const REQUIRED_ROLE = '1528282130080071690';
+const ROLE_ID = '1528282130080071690';
 
 export default {
     data: new SlashCommandBuilder()
         .setName('paypal')
-        .setDescription('Shows the Paypal payment information.'),
+        .setDescription('Shows the PayPal payment information.'),
 
     async execute(interaction) {
-        if (!interaction.member.roles.cache.has(REQUIRED_ROLE)) {
+        // Check if the user has the required role
+        if (!interaction.member.roles.cache.has(ROLE_ID)) {
             return interaction.reply({
                 content: '❌ You do not have permission to use this command.',
                 ephemeral: true,
@@ -36,9 +37,7 @@ export default {
                     inline: false,
                 }
             )
-            .setFooter({
-                text: 'InfinitySMP Store',
-            })
+            .setFooter({ text: 'InfinitySMP Store' })
             .setTimestamp();
 
         await interaction.reply({
