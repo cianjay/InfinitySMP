@@ -32,8 +32,8 @@ export default {
                     inline: false,
                 },
                 {
-                    name: '📸 Proof',
-                    value: 'After sending your payment, create a ticket and send a screenshot as proof.',
+                    name: '📝 Note',
+                    value: 'Include your Minecraft username after sending your payment. **(Make sure to send a screenshot of your payment as proof.)**',
                     inline: false,
                 }
             )
