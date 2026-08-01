@@ -5,7 +5,7 @@ const REQUIRED_ROLE = '1528282130080071690';
 export default {
     data: new SlashCommandBuilder()
         .setName('paypal')
-        .setDescription('View the PayPal payment information.'),
+        .setDescription('Shows the Paypal payment information.'),
 
     async execute(interaction) {
         if (!interaction.member.roles.cache.has(REQUIRED_ROLE)) {
