@@ -18,10 +18,7 @@ export default {
         const embed = new EmbedBuilder()
             .setColor('#0070BA')
             .setTitle('💙 PayPal Payment')
-            .setDescription(
-                'Thank you for supporting **InfinitySMP**!\n\n' +
-                'Please send your payment using the information below.'
-            )
+            .setDescription('Thank you for supporting **InfinitySMP**!')
             .setThumbnail(interaction.guild.iconURL({ dynamic: true }))
             .addFields(
                 {
@@ -36,7 +33,7 @@ export default {
                 },
                 {
                     name: '📸 Proof of Payment',
-                    value: 'After sending your payment, create a ticket and send a **screenshot** of the transaction.',
+                    value: 'After sending your payment, create a ticket and send a screenshot of your payment.',
                     inline: false,
                 }
             )
