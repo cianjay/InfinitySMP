@@ -23,7 +23,7 @@ export default {
                 },
                 {
                     name: '📝 Note',
-                    value: 'Include your Minecraft username after sending your payment.And Make sure to Sent A Screenshot of the payment for proof',
+                    value: 'Include your Minecraft username after sending your payment. (And Make sure to Sent A Screenshot of the payment for proof)',
                     inline: false,
                 }
             )
