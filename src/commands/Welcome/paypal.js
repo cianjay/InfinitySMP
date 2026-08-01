@@ -1,24 +1,34 @@
 import { SlashCommandBuilder, EmbedBuilder } from 'discord.js';
 
+const ROLE_ID = '1528282130080071690';
+
 export default {
     data: new SlashCommandBuilder()
         .setName('paypal')
         .setDescription('Shows the PayPal payment information.'),
 
     async execute(interaction) {
+        // Check if the user has the required role
+        if (!interaction.member.roles.cache.has(ROLE_ID)) {
+            return interaction.reply({
+                content: '❌ You do not have permission to use this command.',
+                ephemeral: true,
+            });
+        }
+
         const embed = new EmbedBuilder()
             .setColor('#0070BA')
-            .setTitle(' 💙 PayPal Payment')
+            .setTitle('💙 PayPal Payment')
             .setDescription('Thank you for supporting InfinitySMP!')
             .addFields(
                 {
-                    name: ' 💳 PayPal Email',
+                    name: '💳 PayPal Email',
                     value: '`yourpaypal@email.com`',
                     inline: false,
                 },
                 {
                     name: '📝 Note',
-                    value: 'Include your Minecraft username in the payment note. (Make Sure to take a Screenshot of the payment for proof)',
+                    value: 'Include your Minecraft username in the payment note.\n\n**Make sure to send a screenshot of your payment as proof.**',
                     inline: false,
                 }
             )
