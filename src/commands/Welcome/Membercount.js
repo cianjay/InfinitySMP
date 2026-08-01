@@ -28,7 +28,7 @@ export default {
             .setThumbnail(guild.iconURL({ dynamic: true }))
             .addFields(
                 {
-                    name: '👤 Humans',
+                    name: '👤 Members',
                     value: `**${humans}**`,
                     inline: true,
                 },
