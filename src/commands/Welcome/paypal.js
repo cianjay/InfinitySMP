@@ -20,7 +20,6 @@ export default {
             .setColor('#0070BA')
             .setTitle('💙 PayPal Payment')
             .setDescription('Thank you for supporting InfinitySMP!')
-            .setThumbnail(interaction.guild.iconURL({ dynamic: true })) // Server icon thumbnail
             .addFields(
                 {
                     name: '💳 PayPal Email',
