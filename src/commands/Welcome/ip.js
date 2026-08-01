@@ -13,12 +13,12 @@ export default {
             .addFields(
                 {
                     name: '📡 Server IP',
-                    value: '```Coming Soon```',
+                    value: '```infinitynetwork.playwithbao.com```',
                     inline: false,
                 },
                 {
                     name: '🔌 Port',
-                    value: '```Coming Soon```',
+                    value: '```47724```',
                     inline: true,
                 },
                 {
