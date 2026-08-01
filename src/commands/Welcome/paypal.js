@@ -8,11 +8,11 @@ export default {
     async execute(interaction) {
         const embed = new EmbedBuilder()
             .setColor('#0070BA')
-            .setTitle('💙 PayPal Payment')
+            .setTitle(' 💙 PayPal Payment')
             .setDescription('Thank you for supporting InfinitySMP!')
             .addFields(
                 {
-                    name: '💳 PayPal Email',
+                    name: ' 💳 PayPal Email',
                     value: '`yourpaypal@email.com`',
                     inline: false,
                 },
