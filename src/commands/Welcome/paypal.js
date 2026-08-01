@@ -2,36 +2,13 @@ import { SlashCommandBuilder, EmbedBuilder } from 'discord.js';
 
 const ROLE_ID = '1528282130080071690';
 
-function createEmbed() {
-    return new EmbedBuilder()
-        .setColor('#0070BA')
-        .setTitle('💙 PayPal Payment')
-        .setDescription('Thank you for supporting InfinitySMP!')
-        .addFields(
-            {
-                name: '💳 PayPal Email',
-                value: '`yourpaypal@email.com`',
-                inline: false,
-            },
-            {
-                name: '📝 Note',
-                value: 'Include your Minecraft username in the payment note.\n\n**Make sure to send a screenshot of your payment as proof.**',
-                inline: false,
-            }
-        )
-        .setFooter({ text: 'InfinitySMP Store' })
-        .setTimestamp();
-}
-
 export default {
     data: new SlashCommandBuilder()
         .setName('paypal')
         .setDescription('Shows the PayPal payment information.'),
 
-    name: 'paypal',
-    aliases: ['pp'],
-
     async execute(interaction) {
+        // Check if the user has the required role
         if (!interaction.member.roles.cache.has(ROLE_ID)) {
             return interaction.reply({
                 content: '❌ You do not have permission to use this command.',
@@ -39,19 +16,32 @@ export default {
             });
         }
 
-        return interaction.reply({
-            embeds: [createEmbed()],
+        const embed = new EmbedBuilder()
+            .setColor('#0070BA')
+            .setTitle('💙 PayPal Payment')
+            .setDescription('Thank you for supporting InfinitySMP!')
+            .setThumbnail(interaction.guild.iconURL({ dynamic: true })) // Server icon thumbnail
+            .addFields(
+                {
+                    name: '💳 PayPal Email',
+                    value: '`yourpaypal@email.com`',
+                    inline: false,
+                },
+                {
+                    name: '📝 Note',
+                    value: 'Include your Minecraft username in the payment note. **(Make sure to send a screenshot of your payment as proof.)**',
+                    inline: false,
+                }
+            )
+            .setFooter({
+                text: 'InfinitySMP Store',
+                iconURL: interaction.guild.iconURL({ dynamic: true }),
+            })
+            .setTimestamp();
+
+        await interaction.reply({
+            embeds: [embed],
             ephemeral: true,
-        });
-    },
-
-    async executeMessage(message) {
-        if (!message.member.roles.cache.has(ROLE_ID)) {
-            return message.reply('❌ You do not have permission to use this command.');
-        }
-
-        return message.reply({
-            embeds: [createEmbed()],
         });
     },
 };
